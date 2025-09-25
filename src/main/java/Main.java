@@ -1,12 +1,14 @@
 public class Main {
+
+    public static boolean isVowel(char c) {
+        return "aeiouAEIOU".indexOf(c) >= 0;
+    }
+
     public static int countVowels(String s) {
         if (s == null) return 0;
         int count = 0;
-        String vowels = "aeiuoAEIOU";
         for (char c : s.toCharArray()) {
-            if (vowels.indexOf(c) != -1) {
-                count++;
-            }
+            if (isVowel(c)) count++;
         }
         return count;
     }

@@ -57,4 +57,9 @@ public class MainTest {
     public void testSpecialChars() {
         assertEquals(Main.countVowels("abcu!*3o"), 3);
     }
+
+    @Test
+    public void testQueue() {
+        assertEquals(Main.countVowels("queue"), 4);
+    }
 }
