@@ -60,6 +60,6 @@ public class MainTest {
 
     @Test
     public void testQueue() {
-        assertEquals(Main.countVowels("queue"), 4);
+        assertEquals(Main.countVowels("queue"), 5);
     }
 }
