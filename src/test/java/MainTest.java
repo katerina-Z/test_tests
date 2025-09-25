@@ -1,65 +1,29 @@
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class MainTest {
 
-    @Test
-    public void testAbc() {
-        assertEquals(Main.countVowels("abc"), 1);
+    @DataProvider
+    public Object[][] vowelsData() {
+        return new Object[][] {
+                {"abc", 1},
+                {"aabc", 2},
+                {"Abc", 1},
+                {"", 0},
+                {"queue", 5},
+                {"bcdfg", 0},
+                {null, 0},
+                {"0", 0},
+                {"aie", 3},
+                {"AIE", 3},
+                {"abcu123o", 3},
+                {"abcu!*3o", 3}
+        };
     }
 
-    @Test
-    public void testDoubleA() {
-        assertEquals(Main.countVowels("aabc"), 2);
-    }
-
-    @Test
-    public void testUppercase() {
-        assertEquals(Main.countVowels("Abc"), 1);
-    }
-
-    @Test
-    public void testEmpty() {
-        assertEquals(Main.countVowels(""), 0);
-    }
-
-    @Test
-    public void testNull() {
-        assertEquals(Main.countVowels(null), 0);
-    }
-
-    @Test
-    public void testDigits() {
-        assertEquals(Main.countVowels("0"), 0);
-    }
-
-    @Test
-    public void testNoVowels() {
-        assertEquals(Main.countVowels("bc"), 0);
-    }
-
-    @Test
-    public void testAllVowels() {
-        assertEquals(Main.countVowels("aie"), 3);
-    }
-
-    @Test
-    public void testUpperVowels() {
-        assertEquals(Main.countVowels("AIE"), 3);
-    }
-
-    @Test
-    public void testMixed() {
-        assertEquals(Main.countVowels("abcu123o"), 3);
-    }
-
-    @Test
-    public void testSpecialChars() {
-        assertEquals(Main.countVowels("abcu!*3o"), 3);
-    }
-
-    @Test
-    public void testQueue() {
-        assertEquals(Main.countVowels("queue"), 5);
+    @Test(dataProvider = "vowelsData")
+    public void testVowels(String input, int expected) {
+        assertEquals(Main.countVowels(input), expected, "Ошибка для строки: " + input);
     }
 }
