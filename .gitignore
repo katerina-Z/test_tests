@@ -1,0 +1,20 @@
+# ========== IntelliJ IDEA ==========
+.idea/
+*.iml
+out/
+
+# ========== Gradle ==========
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ========== OS ==========
+.DS_Store
+Thumbs.db
+
+# ========== Logs ==========
+*.log
+
+# ========== Other ==========
+*.class
