@@ -1,7 +1,13 @@
-public class Main {
+package com.example;
+
+import java.util.Set;
+
+public class CountVowels {
+
+    private static final Set<Character> VOWELS = Set.of('a', 'e', 'i', 'o', 'u');
 
     public static boolean isVowel(char c) {
-        return "aeiouAEIOU".indexOf(c) >= 0;
+        return VOWELS.contains(Character.toLowerCase(c));
     }
 
     public static int countVowels(String s) {
