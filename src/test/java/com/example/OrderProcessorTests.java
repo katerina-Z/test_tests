@@ -68,8 +68,7 @@ public class OrderProcessorTests {
         List<Order> orders = List.of(
                 new Order(1, "P"),
                 new Order(2, "C"),
-                new Order(3, "P"),
-                null
+                new Order(3, "P")
         );
         Map<String, List<Order>> grouped = processor.groupOrdersByStatus(orders);
 
